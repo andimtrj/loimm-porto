@@ -7,7 +7,7 @@ import { motion } from "framer-motion";
 const h1Animation = {
   initial: { y: 150, opacity: 0 },
   animate: { y: 0, opacity: 1 },
-  transition: { duration: 1, delay: 0.2, ease: "easeOut" },
+  transition: { duration: 1, delay: 0.3, ease: "easeOut" },
 };
 
 const h1Animation2 = {
