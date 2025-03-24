@@ -2,35 +2,34 @@ import React, { useState, useEffect } from "react";
 import { AnimatePresence, motion } from "framer-motion";
 import Navbar from "../components/Navbar";
 import aboutFoto from "../assets/aboutFoto.jpg";
-import { easeInOut } from "framer-motion/dom";
 
 // Animation configurations
 const h1Animation = {
   initial: { y: 150, opacity: 0 },
   animate: { y: 0, opacity: 1 },
   exit: { y: -150, opacity: 0 },
-  transition: { duration: 1, delay: 0.5, ease: "easeOut" },
+  transition: { duration: 1, delay: 0.2, ease: "easeOut" },
 };
 
 const h1Animation2 = {
   initial: { y: 150, opacity: 0 },
   animate: { y: 0, opacity: 1 },
   exit: { y: -150, opacity: 0 },
-  transition: { duration: 1, delay: 0.7, ease: "easeOut" },
+  transition: { duration: 1, delay: 0.4, ease: "easeOut" },
 };
 
 const whiteDivAnimation = {
   initial: { scale: 1 },
   animate: { scale: 0.9 },
   exit: { opacity: 0, scale: 2 },
-  transition: { duration: 1.5, delay: 0.6, ease: [0.74, 0, 0.19, 1.02] },
+  transition: { duration: 1.5, delay: 0.3, ease: [0.74, 0, 0.19, 1.02] },
 };
 
 const blackDivAnimation = {
   initial: { scale: 1 },
   animate: { scale: 1 },
   exit: { opacity: 0 },
-  transition: { duration: 1, delay: 0.5, ease: [0.74, 0, 0.19, 1.02] },
+  transition: { duration: 1, delay: 0.2, ease: [0.74, 0, 0.19, 1.02] },
 };
 
 const contentAnimation = {
