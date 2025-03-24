@@ -11,7 +11,7 @@ const h1Animation = {
 const whiteDivAnimation = {
   initial: { scale: 1 },
   animate: { scale: 0.9 },
-  exit: { opacity: 0, scale: 2 },
+  exit: { opacity: 0, scale: 1.5 },
   transition: { duration: 1, delay: 0.2, ease: [0.74, 0, 0.19, 1.02] },
 };
 
@@ -49,15 +49,15 @@ function PageTransition({ children, text }) {
         {showAnimation && (
           <motion.div
             {...blackDivAnimation}
-            className="bg-black top-0 left-0 flex justify-center items-center absolute w-full h-full"
+            className="bg-black top-0 left-0 flex justify-center items-center absolute w-full h-full overflow-hidden"
           >
             <motion.div
               {...whiteDivAnimation}
-              className="absolute top-0 left-0 w-full h-full flex items-center justify-center bg-white z-40"
+              className="absolute top-0 left-0 w-full h-full flex items-center justify-center bg-white z-40 overflow-hidden"
             >
               <motion.div
                 style={{ clipPath: "inset(0 0 0 0)" }}
-                className="w-fit"
+                className="p-1"
               >
                 <motion.h1
                   {...h1Animation}
