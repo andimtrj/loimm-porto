@@ -18,7 +18,7 @@ const h1Animation2 = {
 
 function NewHome() {
   return (
-    <div className="flex justify-between">
+    <div className="flex justify-between overflow-hidden">
       <div className="flex flex-col justify-between">
         <Navbar />
         <div className="pb-5 pl-3">

@@ -5,7 +5,7 @@ const h1Animation = {
   initial: { y: 150, opacity: 0 },
   animate: { y: 0, opacity: 1 },
   exit: { y: -150, opacity: 0 },
-  transition: { duration: 0.8, delay: 0.1, ease: "easeOut" },
+  transition: { duration: 0.8, delay: 0.1, ease: "easeInOut" },
 };
 
 const whiteDivAnimation = {
@@ -57,11 +57,11 @@ function PageTransition({ children, text }) {
             >
               <motion.div
                 style={{ clipPath: "inset(0 0 0 0)" }}
-                className="p-1"
+                className="p-10"
               >
                 <motion.h1
                   {...h1Animation}
-                  className="text-4xl font-bold tracking-tighter"
+                  className="text-8xl font-bold tracking-tighter"
                 >
                   {text}
                 </motion.h1>
