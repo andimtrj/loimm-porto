@@ -12,10 +12,11 @@ function PicLayout({ src }) {
       variants={picVariants}
       initial="hidden"
       whileInView="visible"
-      viewport={{ once: true, margin: "-100px" }}
+
+      viewport={{ once: true, margin: "-200px" }}
       className="overflow-hidden aspect-square"
     >
-      <img src={src} alt="" className="w-full h-full object-cover" />
+      <motion.img src={src} alt="" className="w-full h-full object-cover" whileHover={{ scale: 1.2, transition: {type: "spring"} }} />
     </motion.div>
   );
 }
