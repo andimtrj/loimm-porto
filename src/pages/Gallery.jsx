@@ -32,7 +32,7 @@ function Gallery() {
           SELECTED PICTURES
         </h1>
 
-        <div className="grid grid-cols-4 gap-3 mb-3">
+        <div className="grid grid-cols-4 gap-3 mb-3" style={{ clipPath: "inset(0 0 0 0)" }}>
           {images.map((src, i) => (
             <motion.div
               key={i}
@@ -47,7 +47,7 @@ function Gallery() {
           ))}
         </div>
 
-        <div className="grid grid-cols-5 gap-3 mb-3">
+        <div className="grid grid-cols-5 gap-3 mb-3" style={{ clipPath: "inset(0 0 0 0)" }}>
           {imagesRow2.map((src, i) => (
             <motion.div
               key={i}
@@ -62,7 +62,7 @@ function Gallery() {
           ))}
         </div>
 
-        <div className="grid grid-cols-3 gap-3 mb-3">
+        <div className="grid grid-cols-3 gap-3 mb-3" style={{ clipPath: "inset(0 0 0 0)" }}>
           {imagesRow3.map((src, i) => (
             <motion.div
               key={i}
