@@ -31,7 +31,7 @@ function Gallery() {
         <h1 className="text-8xl tracking-tighter font-extrabold">
           SELECTED PICTURES
         </h1>
-
+        
         <div className="grid grid-cols-4 gap-3 mb-3" style={{ clipPath: "inset(0 0 0 0)" }}>
           {images.map((src, i) => (
             <motion.div
@@ -42,7 +42,7 @@ function Gallery() {
               viewport={{ once: true, margin: "-100px" }}
               custom={i}
             >
-              <PicLayout src={src} />
+              <PicLayout src={src} refDetail="/gallery/1" />
             </motion.div>
           ))}
         </div>
@@ -57,7 +57,7 @@ function Gallery() {
               viewport={{ once: true, margin: "-100px" }}
               custom={i}
             >
-              <PicLayout src={src} />
+              <PicLayout src={src} refDetail="/gallery/2" />
             </motion.div>
           ))}
         </div>
@@ -72,7 +72,7 @@ function Gallery() {
               viewport={{ once: true, margin: "-100px" }}
               custom={i}
             >
-              <PicLayout src={src} />
+              <PicLayout src={src} refDetail="/gallery/3" />
             </motion.div>
           ))}
         </div>

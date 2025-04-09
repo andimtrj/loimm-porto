@@ -9,9 +9,9 @@ function Navbar() {
 
   return (
     <nav className="flex font-extrabold py-2 items-center w-full text-black pl-3">
-      <a href="#" className="mr-5 ibm border-2 border-black px-1 py-2">
+      <Link to="/" className="mr-5 ibm border-2 border-black px-1 py-2">
         Imm
-      </a>
+      </Link>
       <div className="text-5xl flex gap-2.5 tracking-tighter">
         <Link to="/" className={`${linkClass("/")} hover:text-black`}>BIO,</Link>
         <Link to="/gallery" className={`${linkClass("/gallery")} hover:text-black`}>GALLERY,</Link>
