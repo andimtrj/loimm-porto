@@ -1,8 +1,9 @@
-import React from "react";
+import React, { useState } from "react";
 import Navbar from "../components/Navbar";
 import { motion } from "framer-motion";
 import Pic from "../StorePic.jsx";
 import PicLayout from "../components/PicLayout.jsx";
+import PicDetails from "../components/PicDetails.jsx";
 
 const picVariants = {
   hidden: { opacity: 0, y: 50 },
@@ -12,18 +13,48 @@ const picVariants = {
     transition: {
       duration: 0.8,
       ease: "easeOut",
-      delay: i * 0.2, // Stagger per PicLayout
+      delay: i * 0.2,
     },
   }),
 };
 
 function Gallery() {
-  const images = [Pic.foto1, Pic.foto2, Pic.foto3, Pic.foto4];
-  const imagesRow2 = [Pic.foto1, Pic.foto2, Pic.foto3, Pic.foto4, Pic.foto1];
-  const imagesRow3 = [Pic.foto1, Pic.foto2, Pic.foto3];
+  const images = [
+    { src: Pic.foto1, title: "Image 1 Title" },
+    { src: Pic.foto2, title: "Image 2 Title" },
+    { src: Pic.foto3, title: "Image 3 Title" },
+    { src: Pic.foto4, title: "Image 4 Title" },
+  ];
+  const imagesRow2 = [
+    { src: Pic.foto1, title: "Image 1 Title" },
+    { src: Pic.foto2, title: "Image 2 Title" },
+    { src: Pic.foto3, title: "Image 3 Title" },
+    { src: Pic.foto4, title: "Image 4 Title" },
+    { src: Pic.foto1, title: "Image 1 Title" },
+  ];
+  const imagesRow3 = [
+    { src: Pic.foto1, title: "Image 1 Title" },
+    { src: Pic.foto2, title: "Image 2 Title" },
+    { src: Pic.foto3, title: "Image 3 Title" },
+  ];
+
+  const [modalOpen, setModalOpen] = useState(false);
+  const [modalContent, setModalContent] = useState({
+    image: "",
+    title: "",
+  });
+
+  const handleImageClick = (image, title) => {
+    setModalContent({ image, title });
+    setModalOpen(true);
+  };
+
+  const closeModal = () => {
+    setModalOpen(false);
+  };
 
   return (
-    <div>
+    <div className="">
       <div className="sticky">
         <Navbar />
       </div>
@@ -31,9 +62,12 @@ function Gallery() {
         <h1 className="text-8xl tracking-tighter font-extrabold">
           SELECTED PICTURES
         </h1>
-        
-        <div className="grid grid-cols-4 gap-3 mb-3" style={{ clipPath: "inset(0 0 0 0)" }}>
-          {images.map((src, i) => (
+
+        <div
+          className="grid grid-cols-4 gap-3 mb-3"
+          style={{ clipPath: "inset(0 0 0 0)" }}
+        >
+          {images.map((item, i) => (
             <motion.div
               key={i}
               variants={picVariants}
@@ -42,13 +76,20 @@ function Gallery() {
               viewport={{ once: true, margin: "-100px" }}
               custom={i}
             >
-              <PicLayout src={src} refDetail="/gallery/1" />
+              <PicLayout
+                src={item.src}
+                title={item.title}
+                onClick={() => handleImageClick(item.src, item.title)}
+              />
             </motion.div>
           ))}
         </div>
 
-        <div className="grid grid-cols-5 gap-3 mb-3" style={{ clipPath: "inset(0 0 0 0)" }}>
-          {imagesRow2.map((src, i) => (
+        <div
+          className="grid grid-cols-5 gap-3 mb-3"
+          style={{ clipPath: "inset(0 0 0 0)" }}
+        >
+          {imagesRow2.map((item, i) => (
             <motion.div
               key={i}
               variants={picVariants}
@@ -57,13 +98,20 @@ function Gallery() {
               viewport={{ once: true, margin: "-100px" }}
               custom={i}
             >
-              <PicLayout src={src} refDetail="/gallery/2" />
+              <PicLayout
+                src={item.src}
+                title={item.title}
+                onClick={() => handleImageClick(item.src, item.title)}
+              />
             </motion.div>
           ))}
         </div>
 
-        <div className="grid grid-cols-3 gap-3 mb-3" style={{ clipPath: "inset(0 0 0 0)" }}>
-          {imagesRow3.map((src, i) => (
+        <div
+          className="grid grid-cols-3 gap-3 mb-3"
+          style={{ clipPath: "inset(0 0 0 0)" }}
+        >
+          {imagesRow3.map((item, i) => (
             <motion.div
               key={i}
               variants={picVariants}
@@ -72,11 +120,22 @@ function Gallery() {
               viewport={{ once: true, margin: "-100px" }}
               custom={i}
             >
-              <PicLayout src={src} refDetail="/gallery/3" />
+              <PicLayout
+                src={item.src}
+                title={item.title}
+                onClick={() => handleImageClick(item.src, item.title)}
+              />
             </motion.div>
           ))}
         </div>
       </div>
+
+      <PicDetails
+        isOpen={modalOpen}
+        onClose={closeModal}
+        image={modalContent.image}
+        title={modalContent.title}
+      />
     </div>
   );
 }

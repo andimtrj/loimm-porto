@@ -10,13 +10,12 @@ const picVariants = {
   },
 };
 
-// Shared transition
 const sharedTransition = {
   ease: [0.74, 0, 0.19, 1.02],
   duration: 0.8,
 };
 
-function PicLayout({ src, refDetail }) {
+function PicLayout({ src, title, onClick }) {
   return (
     <motion.div
       variants={picVariants}
@@ -33,24 +32,25 @@ function PicLayout({ src, refDetail }) {
       >
         <motion.img
           src={src}
-          alt=""
-          className="w-full h-full object-cover"
+          alt={title}
+          className="w-full h-full object-cover cursor-pointer"
           variants={{
             rest: { scale: 1, transition: sharedTransition },
             hover: { scale: 1.2, transition: sharedTransition },
           }}
+          onClick={onClick}
         />
 
-          <motion.a
-            className="absolute text-3xl font-bold tracking-tight text-white bg-accent px-3 py-1"
-            variants={{
-              rest: { opacity: 0, y: 100, transition: sharedTransition },
-              hover: { opacity: 1, y: 0, transition: sharedTransition },
-            }}
-            href={refDetail}
-          >
-            <p>More Details</p>
-          </motion.a>
+        <motion.a
+          className="absolute text-3xl font-bold tracking-tight text-white bg-accent px-3 py-1 cursor-pointer"
+          variants={{
+            rest: { opacity: 0, y: 100, transition: sharedTransition },
+            hover: { opacity: 1, y: 0, transition: sharedTransition },
+          }}
+          onClick={onClick}
+        >
+          <p>More Details</p>
+        </motion.a>
       </motion.div>
     </motion.div>
   );
