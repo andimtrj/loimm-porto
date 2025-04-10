@@ -1,7 +1,5 @@
 import React, { useState } from "react";
 import Navbar from "../components/Navbar";
-import PageTransition from "../components/PageTransition";
-import { MouseTracker } from "../components/MouseTracker";
 import { motion } from "framer-motion";
 
 

@@ -13,7 +13,7 @@ function Navbar() {
         Imm
       </Link>
       <div className="text-5xl flex gap-2.5 tracking-tighter">
-        <Link to="/" className={`${linkClass("/")} hover:text-black`}>BIO,</Link>
+        <Link to="/bio" className={`${linkClass("/bio")} hover:text-black`}>BIO,</Link>
         <Link to="/gallery" className={`${linkClass("/gallery")} hover:text-black`}>GALLERY,</Link>
         <Link to="/contact" className={`${linkClass("/contact")} hover:text-black`}>CONTACT</Link>
       </div>

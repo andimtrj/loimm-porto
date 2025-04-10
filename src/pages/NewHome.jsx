@@ -27,7 +27,7 @@ function NewHome() {
               {...h1Animation}
               className="text-6xl font-extrabold tracking-tighter"
             >
-              HALLOW! I'M CARLO - A HUMAN
+              HELLO! I'M CARLO - A HUMAN
             </motion.h1>
           </div>
           <div style={{ clipPath: "inset(0 0 0 0)" }} className="w-fit">

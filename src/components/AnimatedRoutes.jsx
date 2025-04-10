@@ -18,8 +18,16 @@ function AnimatedRoutes() {
     <AnimatePresence mode="wait">
       <motion.div {...fadeOutAnimation} key={location.pathname}>
         <Routes location={location}>
-          <Route
+        <Route
             path="/"
+            element={
+              <PageTransition text="Welcome.">
+                <NewHome />
+              </PageTransition>
+            }
+          />
+          <Route
+            path="/bio"
             element={
               <PageTransition text="Biography.">
                 <NewHome />
