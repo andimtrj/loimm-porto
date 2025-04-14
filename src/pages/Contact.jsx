@@ -1,30 +1,82 @@
-import React, { useState } from "react";
+import React from "react";
 import Navbar from "../components/Navbar";
-import { motion } from "framer-motion";
+import { delay, motion } from "framer-motion";
+import "../App.css";
+import StaggerText from "react-stagger-text";
+
+const urlAndi = "https://mataraja.vercel.app/";
+
+// Variants for the parent wrapper
+const containerVariants = {
+  hidden: {},
+  visible: {
+    transition: {
+      staggerChildren: 0.1,
+      delayChildren: 0.5,
+    },
+  },
+};
+
+// Variants for each h1
+const textVariants = {
+  hidden: { opacity: 0, y: 50 },
+  visible: {
+    opacity: 1,
+    y: 0,
+    transition: { duration: 0.6, ease: "easeOut" },
+  },
+};
 
 function Contact() {
   return (
-    <div className="">
+    <div className="h-screen relative">
       <Navbar />
-      <div className="flex justify-between mt-[10vh] px-3">
-        <div className="text-9xl tracking-tighter font-extrabold">
-          <h1>LET'S</h1>
-          <h1>GET</h1>
-          <h1>IN</h1>
-          <h1>TOUCH</h1>
-        </div>
-        <div className="w-1/2 pr-3 flex flex-col items-end">
-          <p className="text-4xl tracking-tighter font-bold uppercase text-right">
-            let's connect! if you have any question or want to explore some opportunities with me. I'm here to help
-          </p>
-          <div className="flex gap-3 text-xl font-medium tracking-tighter w-fit mt-3">
-            <a href="">EMAIL</a>
-            <a href="">INSTAGRAM</a>
+      <div className="flex flex-col justify-between">
+        <div className="flex justify-between mt-[10vh] px-3">
+          <motion.div
+            className="text-9xl tracking-tighter font-extrabold uppercase"
+            initial="hidden"
+            animate="visible"
+            variants={containerVariants}
+          >
+            {["Let's", "GET", "IN", "TOUCH"].map((word, idx) => (
+              <motion.h1 key={idx} variants={textVariants}>
+                {word}
+              </motion.h1>
+            ))}
+          </motion.div>
+
+          <div className="w-5/8 pr-3 flex flex-col items-end">
+            <p className="text-4xl tracking-tighter font-bold uppercase text-right">
+              <StaggerText
+                staggerDuration={2}
+                startDelay={200}
+                staggerEasing="cubic-bezier(0.4, 0, 0.2, 1)"
+              >
+                let's connect! if you have any question or want to explore some
+                opportunities with me. I'm here to help
+              </StaggerText>
+            </p>
+            <div className="flex gap-3 text-xl font-medium tracking-tighter w-fit mt-3">
+              <a href="" className="un">
+                EMAIL
+              </a>
+              <a href="" className="un">
+                INSTAGRAM
+              </a>
+            </div>
           </div>
         </div>
-      </div>
-      <div className="text-xl font font-medium flex justify-end px-3">
-        <p>Dev By Andi Mataraja &copy; 2025</p>
+
+        <div className="absolute bottom-0 right-0 text-xl font font-medium flex justify-end px-3 tracking-tighter">
+          <p>
+            Dev By{" "}
+            <a href={urlAndi} className="un text-accent">
+              Andi Mataraja
+            </a>{" "}
+            &copy; 2025
+          </p>
+        </div>
       </div>
     </div>
   );

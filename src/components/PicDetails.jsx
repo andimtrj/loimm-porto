@@ -47,7 +47,7 @@ function PicDetails({ isOpen, onClose, image, title }) {
           {title && (
             <div className="mt-5" style={{ clipPath: "inset(0 0 0 0)" }}>
               <motion.h1
-                className="text-5xl tracking-tighter font-bold text-white py-2 px-1.5"
+                className="text-2xl tracking-widest font-bold text-white py-2 px-1.5 uppercase"
                 initial={{ y: 50, opacity: 0 }}
                 animate={{ y: 0, opacity: 1 }}
                 exit={{ y: 50, opacity: 0, transition: {delay: 0.5, duration: 1, ease: customEase} }}
