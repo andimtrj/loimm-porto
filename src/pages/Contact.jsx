@@ -32,9 +32,9 @@ function Contact() {
     <div className="h-screen relative">
       <Navbar />
       <div className="flex flex-col justify-between">
-        <div className="flex justify-between mt-[10vh] px-3">
+        <div className="flex flex-col lg:flex-row justify-between mt-[10vh] lg:px-3">
           <motion.div
-            className="text-9xl tracking-tighter font-extrabold uppercase"
+            className="flex flex-col text-9xl tracking-tighter font-extrabold uppercase"
             initial="hidden"
             animate="visible"
             variants={containerVariants}
@@ -46,7 +46,7 @@ function Contact() {
             ))}
           </motion.div>
 
-          <div className="w-5/8 pr-3 flex flex-col items-end">
+          <div className="w-5/8 pr-3 lg:flex flex-col items-end hidden">
             <p className="text-4xl tracking-tighter font-bold uppercase text-right">
               <StaggerText
                 staggerDuration={2}
@@ -66,9 +66,18 @@ function Contact() {
               </a>
             </div>
           </div>
+
+          <div className="flex justify-center items-center w-full gap-10 text-xl font-medium tracking-tighter mt-3 lg:hidden">
+            <a href="" className="un">
+              EMAIL
+            </a>
+            <a href="" className="un">
+              INSTAGRAM
+            </a>
+          </div>
         </div>
 
-        <div className="absolute bottom-0 right-0 text-xl font font-medium flex justify-end px-3 tracking-tighter">
+        <div className="absolute bottom-0 right-0 text-xl font font-medium flex justify-center lg:justify-end px-3 tracking-tighter w-full lg:w-fit">
           <p>
             Dev By{" "}
             <a href={urlAndi} className="un text-accent">
