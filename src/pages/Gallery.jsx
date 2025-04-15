@@ -58,13 +58,13 @@ function Gallery() {
       <div className="sticky">
         <Navbar />
       </div>
-      <div className="mt-72 px-3">
-        <h1 className="text-8xl tracking-tighter font-extrabold">
+      <div className="mt-3 lg:mt-72 px-3">
+        <h1 className="text-6xl mb-5 lg:mb-0 text-center lg:text-left lg:text-8xl tracking-tighter font-extrabold">
           SELECTED PICTURES
         </h1>
 
         <div
-          className="grid grid-cols-4 gap-3 mb-3"
+          className="grid lg:grid-cols-4 gap-3 mb-3"
           style={{ clipPath: "inset(0 0 0 0)" }}
         >
           {images.map((item, i) => (
@@ -86,7 +86,7 @@ function Gallery() {
         </div>
 
         <div
-          className="grid grid-cols-5 gap-3 mb-3"
+          className="grid lg:grid-cols-5 gap-3 mb-3"
           style={{ clipPath: "inset(0 0 0 0)" }}
         >
           {imagesRow2.map((item, i) => (
@@ -108,7 +108,7 @@ function Gallery() {
         </div>
 
         <div
-          className="grid grid-cols-3 gap-3 mb-3"
+          className="grid lg:grid-cols-3 gap-3 mb-3"
           style={{ clipPath: "inset(0 0 0 0)" }}
         >
           {imagesRow3.map((item, i) => (
