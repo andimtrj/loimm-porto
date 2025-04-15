@@ -61,7 +61,7 @@ function PageTransition({ children, text }) {
               >
                 <motion.h1
                   {...h1Animation}
-                  className="text-8xl font-bold tracking-tighter"
+                  className="text-6xl lg:text-8xl font-bold tracking-tighter"
                 >
                   {text}
                 </motion.h1>
