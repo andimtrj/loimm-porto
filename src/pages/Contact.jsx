@@ -1,6 +1,6 @@
 import React from "react";
 import Navbar from "../components/Navbar";
-import { delay, motion } from "framer-motion";
+import { motion } from "framer-motion";
 import "../App.css";
 import StaggerText from "react-stagger-text";
 
@@ -26,6 +26,12 @@ const textVariants = {
     transition: { duration: 0.6, ease: "easeOut" },
   },
 };
+
+const fadeIn = {
+  intial: {opacity: 0},
+  animate: {opacity: 1},
+  transition: {duration: 1, delay: 1}
+}
 
 function Contact() {
   return (
@@ -57,27 +63,27 @@ function Contact() {
                 opportunities with me. I'm here to help
               </StaggerText>
             </p>
-            <div className="flex gap-3 text-xl font-medium tracking-tighter w-fit mt-3">
+            <motion.div {...fadeIn} className="flex gap-3 text-xl font-medium tracking-tighter w-fit mt-3">
               <a href="" className="un">
                 EMAIL
               </a>
               <a href="" className="un">
                 INSTAGRAM
               </a>
-            </div>
+            </motion.div>
           </div>
 
-          <div className="flex justify-center items-center w-full gap-10 text-xl font-medium tracking-tighter mt-3 lg:hidden">
+          <motion.div {...fadeIn} className="flex justify-center items-center w-full gap-10 text-xl font-medium tracking-tighter mt-3 lg:hidden">
             <a href="" className="un">
               EMAIL
             </a>
             <a href="" className="un">
               INSTAGRAM
             </a>
-          </div>
+          </motion.div>
         </div>
 
-        <div className="absolute bottom-0 right-0 text-xl font font-medium flex justify-center lg:justify-end px-3 tracking-tighter w-full lg:w-fit">
+        <motion.div {...fadeIn} className="absolute bottom-0 right-0 text-xl font font-medium flex justify-center lg:justify-end px-3 tracking-tighter w-full lg:w-fit">
           <p>
             Dev By{" "}
             <a href={urlAndi} className="un text-accent">
@@ -85,7 +91,7 @@ function Contact() {
             </a>{" "}
             &copy; 2025
           </p>
-        </div>
+        </motion.div>
       </div>
     </div>
   );
