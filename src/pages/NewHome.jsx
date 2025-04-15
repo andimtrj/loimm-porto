@@ -51,7 +51,7 @@ function NewHome() {
         </div>
       </div>
 
-      <div className="overflow-hidden lg:xl:block flex-shrink-0 w-[40vw] h-screen sm:hidden">
+      <div className="overflow-hidden lg:xl:block flex-shrink-0 w-[40vw] h-screen hidden">
         <img src={aboutFoto} alt="" className="w-full h-full object-cover" />
       </div>
     </div>
