@@ -5,6 +5,7 @@ import NewHome from "../pages/NewHome";
 import Gallery from "../pages/Gallery";
 import Contact from "../pages/Contact";
 import PageTransition from "./PageTransition";
+import Bio from "../pages/Bio";
 
 const fadeOutAnimation = {
   initial: { opacity: 1 },
@@ -30,7 +31,7 @@ function AnimatedRoutes() {
             path="/bio"
             element={
               <PageTransition text="Biography.">
-                <NewHome />
+                <Bio />
               </PageTransition>
             }
           />
