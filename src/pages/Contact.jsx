@@ -85,7 +85,7 @@ function Contact() {
           </motion.div>
         </div>
 
-        <motion.div {...fadeIn} className="absolute bottom-0 right-0 text-xl font font-medium flex justify-center lg:justify-end px-3 tracking-tighter w-full lg:w-fit">
+        <motion.div {...fadeIn} className="absolute bottom-32 lg:bottom-0 right-0 text-xl font font-medium flex justify-center lg:justify-end px-3 tracking-tighter w-full lg:w-fit">
           <p>
             Dev By{" "}
             <a href={urlAndi} className="un text-accent">
