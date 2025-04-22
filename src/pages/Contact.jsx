@@ -5,6 +5,8 @@ import "../App.css";
 import StaggerText from "react-stagger-text";
 
 const urlAndi = "https://mataraja.vercel.app/";
+const urlIG = "https://www.instagram.com/carloimm/";
+const email = "mailto:matheuscarloimanuel@gmail.com"
 
 // Variants for the parent wrapper
 const containerVariants = {
@@ -40,13 +42,13 @@ function Contact() {
       <div className="flex flex-col justify-between">
         <div className="flex flex-col lg:flex-row justify-between mt-[10vh] lg:px-3">
           <motion.div
-            className="flex flex-col text-9xl tracking-tighter font-extrabold uppercase"
+            className="flex flex-col text-8xl lg:text-9xl tracking-tighter font-extrabold uppercase items-center lg:items-start"
             initial="hidden"
             animate="visible"
             variants={containerVariants}
           >
             {["Let's", "GET", "IN", "TOUCH"].map((word, idx) => (
-              <motion.h1 key={idx} variants={textVariants}>
+              <motion.h1 key={idx} variants={textVariants} className="w-fit">
                 {word}
               </motion.h1>
             ))}
@@ -64,20 +66,20 @@ function Contact() {
               </StaggerText>
             </p>
             <motion.div {...fadeIn} className="flex gap-3 text-xl font-medium tracking-tighter w-fit mt-3">
-              <a href="" className="un">
+              <a href={email} className="un">
                 EMAIL
               </a>
-              <a href="" className="un">
+              <a href={urlIG} target="_blank" className="un">
                 INSTAGRAM
               </a>
             </motion.div>
           </div>
 
-          <motion.div {...fadeIn} className="flex justify-center items-center w-full gap-10 text-xl font-medium tracking-tighter mt-3 lg:hidden">
-            <a href="" className="un">
+          <motion.div {...fadeIn} className="flex justify-center items-center w-full gap-10 text-xl font-medium tracking-tighter mt-20 lg:hidden">
+            <a href={email} className="un">
               EMAIL
             </a>
-            <a href="" className="un">
+            <a href={urlIG} target="_blank" className="un">
               INSTAGRAM
             </a>
           </motion.div>
