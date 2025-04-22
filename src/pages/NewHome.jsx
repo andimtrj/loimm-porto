@@ -23,7 +23,7 @@ function NewHome() {
         <Navbar />
 
         <div className="sm:flex sm:flex-col sm:justify-center sm:items-center">
-          <div className="overflow-hidden block flex-shrink-0 w-full h-[80vh] lg:xl:hidden px-5 mb-2">
+          <div className="overflow-hidden block flex-shrink-0 w-full h-[75vh] lg:xl:hidden px-5 mb-2">
             <img
               src={aboutFoto}
               alt=""

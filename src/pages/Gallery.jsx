@@ -26,16 +26,16 @@ function Gallery() {
     { src: Pic.foto4, title: "Image 4 Title" },
   ];
   const imagesRow2 = [
-    { src: Pic.foto1, title: "Image 1 Title" },
-    { src: Pic.foto2, title: "Image 2 Title" },
-    { src: Pic.foto3, title: "Image 3 Title" },
-    { src: Pic.foto4, title: "Image 4 Title" },
-    { src: Pic.foto1, title: "Image 1 Title" },
+    { src: Pic.foto5, title: "Image 5 Title" },
+    { src: Pic.foto6, title: "Image 6 Title" },
+    { src: Pic.foto7, title: "Image 7 Title" },
+    { src: Pic.foto8, title: "Image 8 Title" },
+    { src: Pic.foto9, title: "Image 9 Title" },
   ];
   const imagesRow3 = [
-    { src: Pic.foto1, title: "Image 1 Title" },
-    { src: Pic.foto2, title: "Image 2 Title" },
-    { src: Pic.foto3, title: "Image 3 Title" },
+    { src: Pic.foto10, title: "Image 10 Title" },
+    { src: Pic.foto11, title: "Image 11 Title" },
+    { src: Pic.foto12, title: "Image 12 Title" },
   ];
 
   const [modalOpen, setModalOpen] = useState(false);
@@ -63,6 +63,7 @@ function Gallery() {
           SELECTED PICTURES
         </h1>
 
+        {/* First Row - 4 photos */}
         <div
           className="grid lg:grid-cols-4 gap-3 mb-3"
           style={{ clipPath: "inset(0 0 0 0)" }}
@@ -85,6 +86,7 @@ function Gallery() {
           ))}
         </div>
 
+        {/* Second Row - 5 photos */}
         <div
           className="grid lg:grid-cols-5 gap-3 mb-3"
           style={{ clipPath: "inset(0 0 0 0)" }}
@@ -107,6 +109,7 @@ function Gallery() {
           ))}
         </div>
 
+        {/* Third Row - 3 photos */}
         <div
           className="grid lg:grid-cols-3 gap-3 mb-3"
           style={{ clipPath: "inset(0 0 0 0)" }}

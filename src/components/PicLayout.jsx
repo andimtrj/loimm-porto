@@ -34,6 +34,7 @@ function PicLayout({ src, title, onClick }) {
           src={src}
           alt={title}
           className="w-full h-full object-cover cursor-pointer"
+          loading="lazy"
           variants={{
             rest: { scale: 1, transition: sharedTransition },
             hover: { scale: 1.2, transition: sharedTransition },
