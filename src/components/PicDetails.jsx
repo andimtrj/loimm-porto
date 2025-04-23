@@ -44,7 +44,7 @@ function PicDetails({ isOpen, onClose, image, title }) {
             </motion.div>
           </div>
 
-          {title && (
+          {/* {title && (
             <div className="mt-5" style={{ clipPath: "inset(0 0 0 0)" }}>
               <motion.h1
                 className="text-2xl tracking-widest font-bold text-white py-2 px-1.5 uppercase"
@@ -60,7 +60,7 @@ function PicDetails({ isOpen, onClose, image, title }) {
                 {title}
               </motion.h1>
             </div>
-          )}
+          )} */}
         </motion.div>
       )}
     </AnimatePresence>
